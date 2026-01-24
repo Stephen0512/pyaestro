@@ -1,5 +1,5 @@
 from math import ceil, sqrt
-from random import choices, randint
+from random import choices, randint, seed
 from typing import Any, Dict, List, Set, Tuple, Type, Union
 
 import pytest
@@ -14,7 +14,7 @@ MAX_WEIGHT = 1000
 
 def pytest_sessionstart(session):
     """Initialize a fixed global random seed for the test session."""
-    random.seed(17)
+    seed(17)
 
 
 @pytest.fixture(
