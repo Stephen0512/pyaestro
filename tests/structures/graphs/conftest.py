@@ -12,6 +12,11 @@ from tests.helpers.utils import generate_unique_upper_names
 MAX_WEIGHT = 1000
 
 
+def pytest_sessionstart(session):
+    """Initialize a fixed global random seed for the test session."""
+    random.seed(17)
+
+
 @pytest.fixture(
     scope="module",
     params=[
